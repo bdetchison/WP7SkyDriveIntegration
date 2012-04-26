@@ -1,0 +1,74 @@
+﻿<!--/*
+ * LICENSE INFO
+ * 
+ * This code sample can be used for free without any restrictions as long as the use meets one of these categories:
+ * 
+ *  - Using the code in your Windows Phone application
+ *  - Using this code to write your own free tutorial
+ *  
+ * You can NOT use this code for any other purposes. That means you can NOT sell a tutorial that uses any of this code.
+ * 
+ * This code was written by Andrew Bares. I have to give thanks to all the other tutorials out there that helped me!
+ */-->
+
+
+
+
+<!--CHANGE "BackupSample" to your app's namespace-->
+
+<phone:PhoneApplicationPage 
+    x:Class="SkyDriveExample.BackupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    xmlns:my="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="SETTINGS" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="backup" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Name="stackPanel">
+
+                <!--CHANGE ClientId to your own client ID. Leave the rest the same-->
+                <my:SignInButton Name="btnSignIn" ClientId="000000004C0B2C09" Scopes="wl.basic wl.signin wl.offline_access wl.skydrive_update" RedirectUri="https://oauth.live.com/desktop" Branding="Windows" TextType="SignIn" SessionChanged="btnSignIn_SessionChanged"/>
+                <Button x:Name="buttonBackup" Click="buttonBackup_Click" Content="Backup" IsEnabled="{Binding BackupEnabled}" />
+                <Button x:Name="buttonRestore" Click="buttonRestore_Click" Content="Restore" IsEnabled="{Binding RestoreEnabled}"/>
+                <TextBlock x:Name="infoTextBlock" TextWrapping="Wrap" Margin="12, 30, 12, 12" Text="{Binding Message}"/>
+                <TextBlock x:Name="dateTextBlock" TextWrapping="Wrap" Margin="12, 30, 12, 12" Text="{Binding Date}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyDriveExample", "SkyDriveExample\SkyDriveExample.csproj", "{DF570833-906A-41CB-8496-95EB08EDD5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF570833-906A-41CB-8496-95EB08EDD5DD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
